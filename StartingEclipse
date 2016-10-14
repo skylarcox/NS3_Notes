@@ -1,0 +1,34 @@
+
+To start eclipse, browse to the folder on the desktop and enter the directory.  Then use the following command to start the application:
+
+sudo ./eclipse
+
+That will start the program and from there you can edit code.  
+
+To run the code that has been edited, browse to the ns-3-allinone/ns-3-dev directory and use command:
+
+./waf --run path/filename, where path and file are the path to the file and filename is the name of the file (without extension).  For example, browse to '/ns-3-allinone/ns-3-dev':
+
+./waf --run scratch/edited_first
+
+'edited_first' is the file 'edited_first.cc' and 'scratch' is the folder where the file is located.
+
+If there is ever a problem with setting the java path, enter the following in the eclipse.ini file:
+ 
+-vm
+/usr/local/java/jdk1.8.0_91/bin/java
+
+This will come just after the launcher entry and just before the -vmargs entry.
+
+Should look similar to:
+
+%%%%%
+"...
+	openFile
+	--launcher.appendVmargs
+	-vm
+	/usr/local/java/jdk1.8.0_91/bin/java
+	-vmargs
+	-Dosgi.re
+..."
+%%%%%%
